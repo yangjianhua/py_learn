@@ -15,10 +15,14 @@ lstAll = ['a', 'and', 'away', 'big', 'blue', 'can', 'come',
     'the', 'three', 'to', 'two', 'up', 'we', 'where', 'yellow', 'you']
 
 t = turtle.Turtle()
+
+arg = ''
 if (len(sys.argv) >= 2):
     arg = sys.argv[1]
-else:
-    arg = ''
+
+shuffle = ''
+if (len(sys.argv) >= 3):
+    shuffle = sys.argv[2]
 
 s = turtle.getscreen()
 width = s.window_width()
@@ -35,8 +39,12 @@ def waitDraw(size):
     t.pencolor('black')
     t.fd(w)
     t.left(180)
+    t.pencolor('green')
+    t.fd(w)
+    t.left(180)
     t.pencolor('red')
     t.fd(w)
+    turtle.ht()
 
 
 def writeTxt(size, txt):
@@ -48,14 +56,15 @@ def writeTxt(size, txt):
     t.down()
     t.pencolor('red')
     t.write(txt, font=('Times New Roman', size, ''))
-    # turtle.ht()
+    turtle.ht()
 
 writeTxt(100, "开始学单词...")
 waitDraw(500)
 t.reset()
 
 # lstAll = list(range(97, 123))
-random.shuffle(lstAll)
+if ((shuffle == '--shuffle') or (shuffle == '-S')):
+    random.shuffle(lstAll)
 
 for i, val in enumerate(lstAll):
     if ((arg == '--upper') or (arg == '-U')):
