@@ -3,6 +3,12 @@ import random
 import time
 import sys
 
+lstAll = ['and', 'away', 'big', 'blue', 'can', 'come',
+    'down', 'find', 'for', 'funny', 'go', 'help', 'here', 'I',
+    'in', 'is', 'it', 'jump', 'little', 'look', 'make', 'me',
+    'my', 'not', 'one', 'play', 'red', 'run', 'said', 'see',
+    'the', 'three', 'to', 'two', 'up', 'we', 'where', 'yellow', 'you']
+
 t = turtle.Turtle()
 if (len(sys.argv) >= 2):
     arg = sys.argv[1]
@@ -40,15 +46,15 @@ def writeTxt(size, txt):
 
 letter = ""
 
-lstAll = list(range(97, 123))
+# lstAll = list(range(97, 123))
 random.shuffle(lstAll)
 
 for i, val in enumerate(lstAll):
     if ((arg == '--upper') or (arg == '-U')):
-        letter = chr(val).upper()
+        letter = val.upper()
     else:
-        letter = chr(val)
-    writeTxt(500, letter)
+        letter = val
+    writeTxt(300, letter)
     waitDraw(300)
     t.reset()
 
