@@ -15,10 +15,11 @@ if (len(sys.argv) >= 2):
 else:
     arg = ''
 
+s = turtle.getscreen()
+width = s.window_width()
+height = s.window_height()
+
 def waitDraw(size):
-    s = turtle.getscreen()
-    width = s.window_width()
-    height = s.window_height()
     w = width - 20
 
     t.speed(2)
@@ -35,7 +36,7 @@ def waitDraw(size):
 
 def writeTxt(size, txt):
     t.clear()
-    left = 0 - size / 2
+    left = 0 - width / 2 + 20
     top = 0 - size / 2
     t.up()
     t.goto(left, top)
@@ -47,14 +48,14 @@ def writeTxt(size, txt):
 letter = ""
 
 # lstAll = list(range(97, 123))
-random.shuffle(lstAll)
+# random.shuffle(lstAll)
 
 for i, val in enumerate(lstAll):
     if ((arg == '--upper') or (arg == '-U')):
         letter = val.upper()
     else:
         letter = val
-    writeTxt(300, letter)
+    writeTxt(200, letter)
     waitDraw(300)
     t.reset()
 
