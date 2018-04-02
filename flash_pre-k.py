@@ -47,7 +47,7 @@ def writeTxt(size, txt):
     t.goto(left, top)
     t.down()
     t.pencolor('red')
-    t.write(txt, font=('Arial', size, ''))
+    t.write(txt, font=('Times New Roman', size, ''))
     # turtle.ht()
 
 writeTxt(100, "开始学单词...")
