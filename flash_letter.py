@@ -48,7 +48,7 @@ for i, val in enumerate(lstAll):
         letter = chr(val).upper()
     else:
         letter = chr(val)
-    writeTxt(500, letter)
+    writeTxt(300, letter)
     waitDraw(300)
     t.reset()
 

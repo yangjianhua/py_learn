@@ -1,3 +1,5 @@
+#coding:utf-8
+
 import turtle
 import random
 import time
@@ -23,11 +25,11 @@ width = s.window_width()
 height = s.window_height()
 
 def waitDraw(size):
-    w = width - 20
+    w = width - 40
 
     t.speed(2)
     t.up()
-    t.goto(0 - width / 2, 0 - height / 2 + 20)
+    t.goto(0 - width / 2 + 20, 0 - height / 2 + 20)
     t.down()
     t.pensize(3)
     t.pencolor('black')
@@ -46,9 +48,11 @@ def writeTxt(size, txt):
     t.down()
     t.pencolor('red')
     t.write(txt, font=('Arial', size, ''))
-    turtle.ht()
+    # turtle.ht()
 
-letter = ""
+writeTxt(100, "开始学单词...")
+waitDraw(500)
+t.reset()
 
 # lstAll = list(range(97, 123))
 random.shuffle(lstAll)
@@ -58,6 +62,7 @@ for i, val in enumerate(lstAll):
         letter = val.upper()
     else:
         letter = val
+
     writeTxt(200, letter)
     waitDraw(300)
     t.reset()
