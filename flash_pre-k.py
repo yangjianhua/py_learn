@@ -48,7 +48,7 @@ def writeTxt(size, txt):
 letter = ""
 
 # lstAll = list(range(97, 123))
-# random.shuffle(lstAll)
+random.shuffle(lstAll)
 
 for i, val in enumerate(lstAll):
     if ((arg == '--upper') or (arg == '-U')):
